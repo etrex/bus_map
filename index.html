@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公車路線查詢地圖</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div id="app">
+        <div id="sidebar">
+            <h1>公車路線查詢</h1>
+
+            <div class="search-section">
+                <div class="city-selector">
+                    <label for="city-select">選擇城市：</label>
+                    <select id="city-select">
+                        <option value="Taipei">臺北市</option>
+                        <option value="NewTaipei">新北市</option>
+                        <option value="Taoyuan">桃園市</option>
+                        <option value="Taichung">臺中市</option>
+                        <option value="Tainan">臺南市</option>
+                        <option value="Kaohsiung">高雄市</option>
+                        <option value="Keelung">基隆市</option>
+                        <option value="Hsinchu">新竹市</option>
+                        <option value="HssinchuCounty">新竹縣</option>
+                        <option value="MiaoliCounty">苗栗縣</option>
+                        <option value="ChanghuaCounty">彰化縣</option>
+                        <option value="NantouCounty">南投縣</option>
+                        <option value="YunlinCounty">雲林縣</option>
+                        <option value="ChssyiCounty">嘉義縣</option>
+                        <option value="Chiayi">嘉義市</option>
+                        <option value="PingtungCounty">屏東縣</option>
+                        <option value="YilanCounty">宜蘭縣</option>
+                        <option value="HualienCounty">花蓮縣</option>
+                        <option value="TaitungCounty">臺東縣</option>
+                        <option value="KinmenCounty">金門縣</option>
+                        <option value="PenghuCounty">澎湖縣</option>
+                        <option value="LienchiangCounty">連江縣</option>
+                    </select>
+                </div>
+
+                <div class="search-box">
+                    <label for="station-input">輸入站名：</label>
+                    <input type="text" id="station-input" placeholder="例如：台北車站" autocomplete="off" />
+                    <button id="search-btn">查詢</button>
+                </div>
+
+                <div id="suggestions" class="suggestions"></div>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <span>查詢中...</span>
+            </div>
+
+            <div id="results" class="results">
+                <div id="station-info" class="station-info hidden">
+                    <h2 id="station-name"></h2>
+                    <p id="station-address"></p>
+                </div>
+
+                <div id="routes-list" class="routes-list">
+                    <p class="placeholder">請輸入站名開始查詢</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
